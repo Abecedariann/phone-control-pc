@@ -26,7 +26,7 @@ while True:
 		# 	haveone=True
 		# else:
 		# 	haveone=False
-		haveone=False
+		# haveone=False
 		face_names=[]
 		for face_encoding in face_encodings:
 			match=face_recognition.compare_faces([img_encoding],face_encoding,tolerance=0.5)
@@ -34,7 +34,7 @@ while True:
 			a=face_distances
 			print(face_distances)
 			if match[0]:
-				haveone=True
+				# haveone=True
 				name='me'
 				print(name)
 				ex=True
@@ -43,7 +43,7 @@ while True:
 				
 				# sys.exit()		
 			else:
-				haveone=True
+				# haveone=True
 				name='unknown'
 				print(name)
 			face_names.append(name)
