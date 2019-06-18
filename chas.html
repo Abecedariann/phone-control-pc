@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="1.css">
+	<script type="text/javascript">
+		function calc(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/calc/',
+				type:'get',
+				success:function(data){
+					$('p').html(data);
+				}
+			})
+		}
+		function pic(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/pic/',
+				type:'get',
+				success:function(data){
+					$('img').attr('src',data);
+					$('img').attr('width',512);
+					$('img').attr('height',384);
+					// body...
+				}
+			})
+		}
+		function close_pic(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/close_pic/',
+				type:'get',
+				success:function(data){
+					$('img').attr('src',data);
+					$('img').attr('width',0);
+					$('img').attr('height',0);
+				}
+			})
+		}
+		function shut(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/shut/',
+				type:'get',
+				success:function(data){
+					$('p').html('shut');
+				}
+			})
+		}
+		function music(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/music',
+				type:'get',
+				success:function(data){
+					$('p').html('music');
+				}
+			})
+		}
+		function music_next(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/music_next',
+				type:'get',
+				success:function(data){
+					$('p').html('music_next');
+				}
+			})
+		}
+		function sound_add(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/sound_add',
+				type:'get',
+				success:function(data){
+					$('p').html('+');
+				}
+			})
+		}
+		function sound_low(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/sound_low',
+				type:'get',
+				success:function(data){
+					$('p').html('-');
+				}
+			})
+		}
+		function xiumian(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/xiumian',
+				type:'get',
+				success:function(data){
+					$('p').html('xiumian');
+				}
+			})
+		}
+		function unlock(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/unlock',
+				type:'get',
+				success:function(data){
+					$('p').html(data);
+				}
+			})
+		}
+		function lock(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/lock',
+				type:'get',
+				success:function(data){
+					$('p').html(data);
+				}
+			})
+		}
+		function face(){
+			$.ajax({
+				url:'http://192.168.1.103:3001/face',
+				type:'get',
+				success:function(data){
+					$('p').html(data);
+				}
+			})
+		}
+	</script>
+</head>
+
+<body>
+<p>asadf</p>
+<!-- button button-raised button-primary button-pill -->
+<!-- <div class="button-caution">asdfasd</div> -->
+<button class="button button-glow button-border button-rounded button-primary" onclick="calc();">calc</button>
+<button class="button button-glow button-border button-rounded button-primary" onclick="pic();">pic</button>
+<button class="button button-glow button-border button-rounded button-primary" onclick="close_pic()">cpic</button>
+<br><br>
+<button class="button button-glow button-border button-rounded button-primary" onclick="shut()">shut</button>
+<button class="button button-glow button-border button-rounded button-primary" onclick="xiumian()">xiumian</button>
+<button class="button button-glow button-border button-rounded button-primary" onclick="unlock()">unlock</button>
+<button class="button button-glow button-border button-rounded button-primary" onclick="lock()">lock</button>
+<br><br>
+<button class="button button-glow button-border button-rounded button-primary" onclick="face()">face</button>
+<br><br>
+<button class="button button-primary button-circle button-giant button-longshadow" onclick="music()">play</button>
+<button class="button button-primary button-circle button-giant button-longshadow" onclick="music_next()">></button>
+<button class="button button-primary button-circle button-giant button-longshadow" onclick="sound_add()">+</button>
+<button class="button button-primary button-circle button-giant button-longshadow" onclick="sound_low()">-</button>
+
+<img src="" />
+</body>
+</html>
